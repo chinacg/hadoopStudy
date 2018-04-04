@@ -1,2 +1,0 @@
-# hadoopStudy
-hadoopStudy
