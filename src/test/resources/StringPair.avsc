@@ -3,7 +3,7 @@
     "name":"StringPair",
     "doc":"A pair of strings",
     "fields":[
-        {"name":"left","type":"string"},
-        {"name":"right","type":"string"}
+        {"name":"left","type":"string", "order":"ignore"},
+        {"name":"right","type":"string","order":"descending"}
     ]
 }

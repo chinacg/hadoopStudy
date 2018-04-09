@@ -30,6 +30,7 @@ public class TestGenericMapping {
         DatumWriter<GenericRecord> writer = new GenericDatumWriter<>(schema);
         //encoder可以将数据写入流中，binaryEncoder第二个参数是重用的encoder，这里不重用，所用传空
         Encoder encoder = EncoderFactory.get().binaryEncoder(out,null);
+
         writer.write(datum,encoder);
         encoder.flush();
         out.close();
