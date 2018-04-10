@@ -7,6 +7,9 @@ import org.apache.hadoop.util.ReflectionUtils;
 
 import java.io.IOException;
 
+/**
+ * 读取sequenceFile
+ */
 public class SequenceReadDemo {
     public static void main(String[] args) throws IOException{
         String uri = args[0];
