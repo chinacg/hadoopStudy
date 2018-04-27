@@ -10,6 +10,7 @@ import org.apache.hadoop.mapreduce.Mapper;
 import org.apache.hadoop.mapreduce.Reducer;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
+import org.apache.hadoop.mapreduce.lib.output.LazyOutputFormat;
 import org.apache.hadoop.mapreduce.lib.output.MultipleOutputs;
 import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
@@ -80,7 +81,7 @@ public class PartitionByStationUsingMultipleOutputs extends Configured implement
         job.setMapOutputKeyClass(Text.class);
         job.setReducerClass(MultipleOutputReducer.class);
         job.setOutputKeyClass(NullWritable.class);
-
+        job.setOutputFormatClass(LazyOutputFormat.class);// LazyOutputFormat 可以保证指定分区第一条记录输出时才真正创建文件
         return job.waitForCompletion(true)?0:1;
     }
     public static void main(String[] args) throws Exception{
