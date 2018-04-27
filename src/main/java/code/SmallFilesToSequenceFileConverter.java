@@ -6,12 +6,14 @@ import org.apache.hadoop.io.BytesWritable;
 import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapred.*;
-import org.apache.hadoop.mapreduce.InputSplit;
 import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
 
 import java.io.IOException;
 
+/**
+ * 将若干个小文件打包成顺序文件的MapReduce程序
+ */
 public class SmallFilesToSequenceFileConverter extends Configured implements Tool {
 
     static class SequenceFileMapper

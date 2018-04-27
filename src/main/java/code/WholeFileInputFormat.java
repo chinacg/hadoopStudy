@@ -12,6 +12,9 @@ import org.apache.hadoop.mapred.*;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * WholeFileInputFormat 使用RecordReader 将整个文件读为一条记录
+ */
 public class WholeFileInputFormat extends FileInputFormat<NullWritable,BytesWritable> {
 
     @Override
