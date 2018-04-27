@@ -53,6 +53,7 @@ public class SmallFilesToSequenceFileConverter extends Configured implements Too
         jobConf.setOutputKeyClass(Text.class);
         jobConf.setOutputValueClass(BytesWritable.class);
 
+        jobConf.setNumReduceTasks(0);//不需要reduce操作，设置reduce数量为0
         jobConf.setMapperClass(SequenceFileMapper.class);
         JobClient.runJob(jobConf);
 
